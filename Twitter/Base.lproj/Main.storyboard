@@ -58,13 +58,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UjS-pS-e7F">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="118" id="UjS-pS-e7F" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UjS-pS-e7F" id="TCN-e7-dzc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xz1-uN-EE3">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="2Qq-0X-Sh9"/>
+                                                <constraint firstAttribute="width" constant="65" id="ifj-TQ-RUO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Gibby Gilbert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-Yx-U89">
+                                            <rect key="frame" x="73" y="11" width="115" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hez-ok-Hue">
+                                            <rect key="frame" x="73" y="37" width="286" height="70"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hez-ok-Hue" firstAttribute="trailing" secondItem="TCN-e7-dzc" secondAttribute="trailingMargin" id="5Uy-xB-TlN"/>
+                                        <constraint firstItem="Hez-ok-Hue" firstAttribute="bottom" secondItem="TCN-e7-dzc" secondAttribute="bottomMargin" id="KyE-yZ-GLj"/>
+                                        <constraint firstItem="Hez-ok-Hue" firstAttribute="leading" secondItem="Xz1-uN-EE3" secondAttribute="trailing" constant="8" id="MDv-Ds-Xmz"/>
+                                        <constraint firstItem="4ky-Yx-U89" firstAttribute="top" secondItem="TCN-e7-dzc" secondAttribute="topMargin" id="SeC-Rt-Hck"/>
+                                        <constraint firstItem="Xz1-uN-EE3" firstAttribute="leading" secondItem="TCN-e7-dzc" secondAttribute="leading" id="XdX-0e-FsC"/>
+                                        <constraint firstItem="Hez-ok-Hue" firstAttribute="top" secondItem="4ky-Yx-U89" secondAttribute="bottom" constant="4" id="fAh-9a-NiE"/>
+                                        <constraint firstItem="Xz1-uN-EE3" firstAttribute="top" secondItem="TCN-e7-dzc" secondAttribute="top" id="mMa-s4-KyX"/>
+                                        <constraint firstItem="4ky-Yx-U89" firstAttribute="leading" secondItem="Xz1-uN-EE3" secondAttribute="trailing" constant="8" id="xFD-7O-3OD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImageView" destination="Xz1-uN-EE3" id="lqt-ie-lU5"/>
+                                    <outlet property="tweetContentLabel" destination="Hez-ok-Hue" id="XqH-uY-HPI"/>
+                                    <outlet property="userNameLabel" destination="4ky-Yx-U89" id="GVf-6m-xXU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,7 +119,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aB6-9S-Vn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="134"/>
+            <point key="canvasLocation" x="1708" y="141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X1y-EQ-0G3">
